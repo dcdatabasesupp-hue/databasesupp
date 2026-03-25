@@ -16,8 +16,8 @@
     .card {
       position: relative;
       width: 420px;
-      height: 820px; /* increased height to fit Google Form */
-      background: url('card.png') no-repeat center/cover;
+      height: 820px; /* adjusted for form */
+      background-color: #000000; /* black background */
       border-radius: 20px;
       padding: 20px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.2);
@@ -32,34 +32,33 @@
       flex: 1; /* fill remaining space */
       border: none;
       border-radius: 12px;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
 
-    .submit-bar {
+    /* Debit card input bar style */
+    .debit-bar {
       display: flex;
       align-items: center;
-      justify-content: center;
-      background-color: #000000; /* black color */
-      padding: 12px;
+      background-color: #111111; /* slightly lighter black */
       border-radius: 10px;
-      cursor: pointer;
-      transition: 0.3s;
+      padding: 12px 15px;
+      box-sizing: border-box;
     }
 
-    .submit-bar:hover {
-      background-color: #222222;
-    }
-
-    .submit-bar img {
+    .debit-bar img {
       height: 24px;
       width: 24px;
-      margin-right: 10px;
+      margin-right: 12px;
+      filter: invert(100%); /* make logo white on black */
     }
 
-    .submit-bar span {
+    .debit-bar input {
+      flex: 1;
+      background: transparent;
+      border: none;
       color: white;
-      font-weight: bold;
       font-size: 16px;
+      outline: none;
     }
 
   </style>
@@ -77,9 +76,10 @@
     Loading…
   </iframe>
 
-  <div class="submit-bar">
+  <!-- Debit card input bar -->
+  <div class="debit-bar">
     <img src="https://upload.wikimedia.org/wikipedia/en/6/60/Twitter_Logo_as_of_2021.svg" alt="Twitter Logo">
-    <span>Submit</span>
+    <input type="text" placeholder="Enter card details">
   </div>
 </div>
 
